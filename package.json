@@ -1,0 +1,26 @@
+{
+  "name": "miniontracking",
+  "version": "1.0.0",
+  "description": "Must know where everyone is and where everyone goes!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JJHPhoto/miniontracking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JJHPhoto/miniontracking/issues"
+  },
+  "homepage": "https://github.com/JJHPhoto/miniontracking#readme",
+  "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
