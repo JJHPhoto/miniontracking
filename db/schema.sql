@@ -1,20 +1,21 @@
-DROP DATABASE IF EXISTS employeeDB;
-CREATE DATABASE employeeDB;
-USE employeeDB;
+DROP DATABASE IF EXISTS employees;
+CREATE DATABASE employees;
+USE employees;
+
 CREATE TABLE employee (
-    first_name VARCHAR(30)
-    last_name VARCHAR(30)
-    role_id INT
+    id INT PRIMARY KEY,
+    first_name VARCHAR(30),
+    last_name VARCHAR(30),
+    role_id INT,
     manager_id INT
-    id INT PRIMARY KEY
 );
-CREATE TABLE roll (
-    title VARCHAR(30)
-    salary DECIMAL 
-    department_id INT
-    id INT PRIMARY KEY
+CREATE TABLE role (
+    id INT PRIMARY KEY,
+    title VARCHAR(30),
+    salary DECIMAL,
+    department_id INT,
 );
 CREATE TABLE department (
+    id INT PRIMARY KEY,
     name VARCHAR(30)
-    id INT PRIMARY KEY
 );
