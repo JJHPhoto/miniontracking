@@ -1,10 +1,11 @@
 const util = require("util");
 const mysql = require("mysql");
 const inquirer = require("inquirer");
-const ascii_art = require("ascii-art");
+const ascii_art = require("asciiart-logo");
 
 const connection = mysql.createConnection({
   host: "localhost",
+  port: 3306,
   user: "root",
   password: "password",
   database: "employees",
