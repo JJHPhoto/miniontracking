@@ -9,38 +9,38 @@ function askForAction() {
       name: "action",
       type: "list",
       choices: [
-        "View All Minions",
-        "View All Minions by Departments",
-        "View All Minions by Overlord",
-        "Add Minion",
-        "Remove Minion",
-        "Update Minion Role",
-        "Update Minion Overlord",
+        "View All Employees",
+        "View All Employees by Departments",
+        "View All Employees by Manager",
+        "Add Employee",
+        "Remove Employee",
+        "Update Employee Role",
+        "Update Employee Manager",
         "QUIT",
       ],
     })
     .then(() => {
       switch (res.action) {
-        case "View All Minions":
+        case "View All Employees":
           viewDepartment();
           return;
-        case "View All Minions by Departments":
-          viewMinionsbyDepartment();
+        case "View All Employees by Departments":
+          viewEmployeesbyDepartment();
           return;
-        case "View All Minions by Overlord":
-          viewMionionsbyOverlord();
+        case "View All Employees by Manager":
+          viewMionionsbyManager();
           return;
-        case "Add Minion":
-          addMinion();
+        case "Add Employee":
+          addEmployee();
           return;
-        case "Remove Minion":
-          removeMinion();
+        case "Remove Employee":
+          removeEmployee();
           return;
-        case "Update Minion Role":
-          updateMinionRole();
+        case "Update Employee Role":
+          updateEmployeeRole();
           return;
-        case "Update Minion Overlord":
-          updateMinionOverlord();
+        case "Update Employee Manager":
+          updateEmployeeManager();
           return;
         default:
           connection.end();
@@ -55,7 +55,7 @@ function viewDepartment() {
   });
 }
 
-function addMinion() {
+function addEmployee() {
   db.getDepartments().then((departments) => {
     console.log(departments);
 
