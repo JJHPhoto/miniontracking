@@ -2,12 +2,12 @@ const connection = require("./connection");
 
 module.exports = {
   getDepartments() {
-    return connection.queary("SELECT * FROM departments");
+    return connection.query("SELECT * FROM departments");
   },
   getRoles() {
-    return connection.queary("SELECT * FROM role");
+    return connection.query("SELECT * FROM role");
   },
   getEmployees() {
-    return connection.queary("SELECT * FROM employee");
+    return connection.query("SELECT * FROM employee");
   },
 };

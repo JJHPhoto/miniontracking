@@ -16,10 +16,9 @@ function askForAction() {
         "Remove Employee",
         "Update Employee Role",
         "Update Employee Manager",
-        "QUIT",
       ],
     })
-    .then(() => {
+    .then((res) => {
       switch (res.action) {
         case "View All Employees":
           viewDepartment();
@@ -28,7 +27,7 @@ function askForAction() {
           viewEmployeesbyDepartment();
           return;
         case "View All Employees by Manager":
-          viewMionionsbyManager();
+          viewEmployeesbyManager();
           return;
         case "Add Employee":
           addEmployee();
@@ -54,6 +53,10 @@ function viewDepartment() {
     askForAction();
   });
 }
+
+function viewEmployeesbyDepartment() {}
+
+function viewEmployeesbyManager() {}
 
 function addEmployee() {
   db.getDepartments().then((departments) => {
@@ -82,5 +85,11 @@ function addEmployee() {
       });
   });
 }
+
+function removeEmployee() {}
+
+function updateEmployeeRole() {}
+
+function updateEmployeeManager() {}
 
 askForAction();
