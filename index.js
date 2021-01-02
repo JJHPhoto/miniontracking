@@ -1,6 +1,8 @@
 const inquirer = require("inquirer");
 const db = require("./db");
 const connection = require("./db/connection");
+const index = require("./db/index");
+const cTable = require("console.table");
 
 function askForAction() {
   inquirer
@@ -18,8 +20,8 @@ function askForAction() {
         "Update Employee Manager",
       ],
     })
-    .then((res) => {
-      switch (res.action) {
+    .then((response) => {
+      switch (response.action) {
         case "View All Employees":
           viewDepartment();
           return;
@@ -54,42 +56,45 @@ function viewDepartment() {
   });
 }
 
-function viewEmployeesbyDepartment() {}
+//=====================
+//To Dos
 
-function viewEmployeesbyManager() {}
+// function viewEmployeesbyDepartment() {}
 
-function addEmployee() {
-  db.getDepartments().then((departments) => {
-    console.log(departments);
+// function viewEmployeesbyManager() {}
 
-    const departmentChoices = departments.map((departments) => ({
-      value: departments.id,
-      label: departments.name,
-    }));
-    // console.log(departments.map((department) => ({
-    //   value: department.id,
-    //   label: department.name
-    // }))
+// function addEmployee() {
+//   db.getDepartments().then((departments) => {
+//     console.log(departments);
 
-    inquirer
-      .prompt([
-        {
-          message: "What department is this role for?",
-          type: "list",
-          name: department_id,
-          choices: departmentChoices,
-        },
-      ])
-      .then((res) => {
-        console.log(res);
-      });
-  });
-}
+//     const departmentChoices = departments.map((departments) => ({
+//       value: departments.id,
+//       label: departments.name,
+//     }));
+//     // console.log(departments.map((department) => ({
+//     //   value: department.id,
+//     //   label: department.name
+//     // }))
 
-function removeEmployee() {}
+//     inquirer
+//       .prompt([
+//         {
+//           message: "What department is this role for?",
+//           type: "list",
+//           name: department_id,
+//           choices: departmentChoices,
+//         },
+//       ])
+//       .then((res) => {
+//         console.log(res);
+//       });
+//   });
+// }
 
-function updateEmployeeRole() {}
+// function removeEmployee() {}
 
-function updateEmployeeManager() {}
+// function updateEmployeeRole() {}
+
+// function updateEmployeeManager() {}
 
 askForAction();
