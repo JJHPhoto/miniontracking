@@ -43,6 +43,18 @@ function askForAction() {
         case "Update Employee Manager":
           updateEmployeeManager();
           return;
+        case "View All Roles":
+          viewAllRoles();
+        case "Add Role":
+          addRole();
+        case "Remove Role":
+          removeRole();
+        case "View All Departments":
+          viewAllDepartments();
+        case "Add Department":
+          addDepartment();
+        case "Remove Department":
+          removeDepartment();
         default:
           connection.end();
       }
@@ -96,5 +108,17 @@ function viewDepartment() {
 // function updateEmployeeRole() {}
 
 // function updateEmployeeManager() {}
+
+// function viewAllRoles();
+
+// function addRole();
+
+// function removeRole();
+
+// function viewAllDepartments();
+
+// function addDepartment();
+
+// function removeDepartment();
 
 askForAction();
