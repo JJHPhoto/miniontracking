@@ -29,7 +29,7 @@ function askForAction() {
     .then((response) => {
       switch (response.action) {
         case "View All Employees":
-          viewDepartment();
+          viewAllEmployees();
           return;
         case "View All Employees by Departments":
           viewEmployeesbyDepartment();
@@ -67,8 +67,37 @@ function askForAction() {
     });
 }
 
-function viewDepartment() {
+function viewAllEmployees() {
+  db.getEmployees().then((results) => {
+    console.table(results);
+    askForAction();
+  });
+}
+//sort of working, need to order?
+function viewEmployeesbyDepartment() {
+  db.getEmployeesByDepartment().then((results) => {
+    console.table(results);
+    askForAction();
+  });
+}
+
+//sort of working, need to order?
+function viewEmployeesbyManager() {
+  db.getEmployeesByManager().then((results) => {
+    console.table(results);
+    askForAction();
+  });
+}
+
+function viewAllDepartments() {
   db.getDepartments().then((results) => {
+    console.table(results);
+    askForAction();
+  });
+}
+
+function viewAllRoles() {
+  db.getRoles().then((results) => {
     console.table(results);
     askForAction();
   });
@@ -76,10 +105,6 @@ function viewDepartment() {
 
 //=====================
 //To Dos
-
-// function viewEmployeesbyDepartment() {}
-
-// function viewEmployeesbyManager() {}
 
 // function addEmployee() {
 //   db.getDepartments().then((departments) => {
@@ -115,13 +140,9 @@ function viewDepartment() {
 
 // function updateEmployeeManager() {}
 
-// function viewAllRoles();
-
 // function addRole();
 
 // function removeRole();
-
-// function viewAllDepartments();
 
 // function addDepartment();
 
