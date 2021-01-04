@@ -5,14 +5,10 @@ module.exports = {
     return connection.query("SELECT * FROM employee");
   },
   getEmployeesByDepartment() {
-    return connection.query(
-      "SELECT first_name, last_name, department from employee;"
-    );
+    return connection.query("SELECT * FROM employee ORDER BY department;");
   },
   getEmployeesByManager() {
-    return connection.query(
-      "SELECT first_name, last_name, manager_name from employee;"
-    );
+    return connection.query("SELECT * FROM employee ORDER BY manager_name;");
   },
   getDepartments() {
     return connection.query("SELECT * FROM department");

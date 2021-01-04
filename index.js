@@ -73,7 +73,7 @@ function viewAllEmployees() {
     askForAction();
   });
 }
-//sort of working, need to order?
+
 function viewEmployeesbyDepartment() {
   db.getEmployeesByDepartment().then((results) => {
     console.table(results);
@@ -81,7 +81,6 @@ function viewEmployeesbyDepartment() {
   });
 }
 
-//sort of working, need to order?
 function viewEmployeesbyManager() {
   db.getEmployeesByManager().then((results) => {
     console.table(results);
