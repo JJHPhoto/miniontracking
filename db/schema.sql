@@ -3,7 +3,7 @@ CREATE DATABASE employeesdb;
 USE employeesdb;
 
 create table department (
-department_id int auto_increment,
+department_id int not NULL auto_increment,
 name varchar(30),
 primary key (department_id)
 );

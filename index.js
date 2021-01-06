@@ -88,6 +88,89 @@ function viewEmployeesbyManager() {
   });
 }
 
+function addEmployee() {
+  console.log("\n Lets add a new employee to your team!");
+  db.getRoles().then((role) => {
+    const roleOptions = role.map((roles) => ({
+      value: roles.role_id,
+      name: roles.title,
+    }));
+
+    //need to add roles, not just role_id
+    inquirer
+      .prompt([
+        {
+          message: "What is your employee's first name?",
+          type: "input",
+          name: "first_name",
+        },
+        {
+          message: "What is your employee's last name?",
+          type: "input",
+          name: "last_name",
+        },
+        // {
+        //   message: "What is your employee's role ID?",
+        //   type: "input",
+        //   name: "roleID",
+        // },
+        {
+          message: "What role does your employee have?",
+          type: "list",
+          name: "role_id",
+          choices: roleOptions,
+        },
+        // {
+        //   message: "Who is your employee's manager?",
+        //   type: "list",
+        //   name: "manager",
+        //   choices: ["James", "Lisa", "Jack", "Rita"],
+        // },
+        // {
+        //   message: "What is that manager's ID?",
+        //   type: "list",
+        //   name: "managerID",
+        //   choices: ["1", "2", "3", "4"],
+        // },
+      ])
+      .then((results) => {
+        console.log(results);
+        db.addNewEmployee(results);
+        askForAction();
+      });
+  });
+}
+// finishedResults = {
+//   first_name: results.first,
+//   last_name: results.last,
+//   role_id: results.roleID,
+//   department: results.department,
+//   manager_id: results.managerID,
+//   manager_name: results.manager,
+// };
+// db.addNewEmploye(finishedResults);
+// console.log(
+//   `${results.first} ${results.last} has been added to the ${results.department} department. \n`
+// );
+//       askForAction();
+//     });
+// });
+
+//pseudo code from demo.
+// const departmentChoices = departments.map((departments) => ({
+//   value: departments.id,
+//   label: departments.name,
+// }));
+// console.log(departments.map((department) => ({
+//   value: department.id,
+//   label: department.name
+// }))
+
+// name: department_id,
+// choices: departmentChoices
+
+// function updateEmployeeRole() {}
+
 function viewAllDepartments() {
   db.getDepartments().then((results) => {
     console.table(results);
@@ -105,37 +188,7 @@ function viewAllRoles() {
 //=====================
 //To Dos
 
-// function addEmployee() {
-//   db.getDepartments().then((departments) => {
-//     console.log(departments);
-
-//     const departmentChoices = departments.map((departments) => ({
-//       value: departments.id,
-//       label: departments.name,
-//     }));
-//     // console.log(departments.map((department) => ({
-//     //   value: department.id,
-//     //   label: department.name
-//     // }))
-
-//     inquirer
-//       .prompt([
-//         {
-//           message: "What department is this role for?",
-//           type: "list",
-//           name: department_id,
-//           choices: departmentChoices,
-//         },
-//       ])
-//       .then((res) => {
-//         console.log(res);
-//       });
-//   });
-// }
-
 // function removeEmployee() {}
-
-// function updateEmployeeRole() {}
 
 // function updateEmployeeManager() {}
 

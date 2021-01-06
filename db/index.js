@@ -10,6 +10,25 @@ module.exports = {
   getEmployeesByManager() {
     return connection.query("SELECT * FROM employee ORDER BY manager_name;");
   },
+  addNewEmployee(data) {
+    return connection.query("INSERT INTO employee SET ?", data);
+  },
+  //trying something here that couldnt' figure out.
+  // addNewEmployee(id, first, last, role, department, managerID, manager) {
+  //   return connection.query("INSERT INTO employee SET?", {
+  //     id: id,
+  //     first_name: first,
+  //     last_name: last,
+  //     role_id: role,
+  //     department: department,
+  //     manager_id: managerID,
+  //     manager_name: manager,
+  //   });
+  // },
+
+  // updateEmployeeRole() {
+
+  // }
   getDepartments() {
     return connection.query("SELECT * FROM department");
   },
