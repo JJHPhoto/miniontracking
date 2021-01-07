@@ -169,7 +169,52 @@ function addEmployee() {
 // name: department_id,
 // choices: departmentChoices
 
-// function updateEmployeeRole() {}
+function updateEmployeeRole() {
+  console.log("\n Lets update your employee's role!");
+  db.getEmployees().then((employee) => {
+    const employeeUpdate = employee.map((data) => ({
+      value: data.id,
+      name: data.first_name + " " + data.last_name,
+    }));
+
+    inquirer
+      .prompt([
+        {
+          name: "id",
+          type: "list",
+          message: "Which employee do you want to update?",
+          choices: employeeUpdate,
+        },
+      ])
+      .then((updatedEmployee) => {
+        db.getRoles().then((role) => {
+          const availableRoles = role.map((data) => ({
+            value: data.id,
+            name: data.title,
+          }));
+          inquirer
+            .prompt([
+              {
+                name: "role_id",
+                type: "list",
+                message: "What is their updated role?",
+                choices: availableRoles,
+              },
+            ])
+            .then((updatedRole) => {
+              completedUpdate = [
+                { role_id: updatedRole.role_id },
+                { id: updatedEmployee.id },
+              ];
+              db.updateRole(completedUpdate);
+
+              console.log("Your employee's role has been updated");
+              askForAction();
+            });
+        });
+      });
+  });
+}
 
 function viewAllDepartments() {
   db.getDepartments().then((results) => {
