@@ -29,3 +29,6 @@ manager_name varchar(30),
 primary key (id),
 foreign key (role_id) references role(role_id)
 );
+
+SELECT * FROM employee
+LEFT JOIN role ON role_id = role(role_id);

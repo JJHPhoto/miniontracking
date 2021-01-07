@@ -5,7 +5,9 @@ module.exports = {
     return connection.query("SELECT * FROM employee");
   },
   getEmployeesByDepartment() {
-    return connection.query("SELECT * FROM employee ORDER BY department;");
+    return connection.query(
+      "SELECT employee.first_name AS 'First Name', employee.last_name, role.title, role.salary FROM employee LEFT JOIN role ON employee.role_id = role.role_id;"
+    );
   },
   getEmployeesByManager() {
     return connection.query("SELECT * FROM employee ORDER BY manager_name;");
