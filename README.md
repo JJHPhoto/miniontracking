@@ -19,6 +19,12 @@
 
 ## Workflow
 
+The first time I worked on this homework was with my study group. We had all done a little bit of psuedo coding off the demo our instructor had shown us. A few of us put together our seed.sql & schema.sql files for our database. We did a lot of trial and error on these but had a lot of fun working together on the files. With those files, we were able to build out our application and take it in different directions, based on how we saw the application could work.
+
+Then we had the holiday break. I tried to get into coding a few times during the break, but didn't have the mindset to focus in on it. I decided I'd have to work on it and probably submit it a bit late.
+
+I worked on getting my first few views working. I modified the schema & seed file a bit to fit the logic in my head. However, I ended up changing my SELECT for some of my views after a TA explained how to LEFT JOIN my tables. I had heard of this concept a few times, but being abl to work with him on my code put it into my head in a way I could understand.
+
 ## Application Demo
 
 ![](...)
@@ -29,8 +35,6 @@ To watch a video of the application being fully demo'd please use this link: [Ap
 
 <p>
   <img src="https://img.shields.io/badge/Javascript-yellow" />
-  <img src="https://img.shields.io/badge/jQuery-blue"  />
-  <img src="https://img.shields.io/badge/HTML-orange" />
   <img src="https://img.shields.io/badge/-node.js-green" />
   <img src="https://img.shields.io/badge/-inquirer-red" >
   <img src="https://img.shields.io/badge/-mysql-lightgrey" />
@@ -44,3 +48,9 @@ To watch a video of the application being fully demo'd please use this link: [Ap
 [Screencastify](https://www.screencastify.com/)
 
 [Makitweb](https://makitweb.com/how-to-use-order-by-with-multiple-columns-in-mysql/#:~:text=This%20sorts%20your%20MySQL%20table,change%20using%20ASC%20or%20DESC%20.&text=SELECT%20*%20FROM%20%5Btable%2Dname,ASC%7CDESC%5D%2C..)
+
+My Study Group
+
+- [Macz](https://github.com/macz-norton)
+- [Thomas](https://github.com/Tskading)
+- [Zac](https://github.com/themancalledzac)
