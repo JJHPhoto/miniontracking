@@ -54,16 +54,22 @@ function askForAction() {
           return;
         case "View All Roles":
           viewAllRoles();
+          return;
         case "Add Role":
           addRole();
+          return;
         case "Remove Role":
           removeRole();
+          return;
         case "View All Departments":
           viewAllDepartments();
+          return;
         case "Add Department":
           addDepartment();
+          return;
         case "Remove Department":
           removeDepartment();
+          return;
         default:
           connection.end();
       }
@@ -226,12 +232,32 @@ function viewAllDepartments() {
   });
 }
 
+function addDepartment() {
+  console.log("\n Lets add a new department to your company!");
+  inquirer
+    .prompt([
+      {
+        name: "name",
+        type: "input",
+        message: "What department would you like to add to your company?",
+      },
+    ])
+    .then((res, err) => {
+      db.addNewDepartment(res);
+      if (err) throw err;
+      console.log("You have added a new department to your company!");
+      askForAction();
+    });
+}
+
 function viewAllRoles() {
   db.getRoles().then((results) => {
     console.table(results);
     askForAction();
   });
 }
+
+// function addRole();
 
 //=====================
 //To Dos
@@ -240,11 +266,7 @@ function viewAllRoles() {
 
 // function updateEmployeeManager() {}
 
-// function addRole();
-
 // function removeRole();
-
-// function addDepartment();
 
 // function removeDepartment();
 

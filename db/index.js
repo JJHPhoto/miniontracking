@@ -34,6 +34,11 @@ module.exports = {
       "SELECT department.department_id AS 'Department ID', department.name AS 'Name' FROM department"
     );
   },
+  addNewDepartment(res) {
+    return connection.query("INSERT INTO department SET ?", {
+      name: res.name,
+    });
+  },
   getRoles() {
     return connection.query(
       "SELECT employee.first_name AS 'First Name', employee.last_name, role.title, role.salary FROM employee LEFT JOIN role ON employee.role_id = role.role_id;"
