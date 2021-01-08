@@ -2,11 +2,13 @@ const connection = require("./connection");
 
 module.exports = {
   getEmployees() {
-    return connection.query("SELECT * FROM employee");
+    return connection.query(
+      "SELECT employee.first_name AS 'First Name', employee.last_name AS 'Last Name', employee.role_id AS 'Role ID', employee.role AS 'Role', employee.department AS 'Department', employee.manager_id AS 'Manager ID', employee.manager_name AS 'Manager Name' FROM employee "
+    );
   },
   getEmployeesByDepartment() {
     return connection.query(
-      "SELECT employee.first_name AS 'First Name', employee.last_name, role.title, role.salary FROM employee LEFT JOIN role ON employee.role_id = role.role_id;"
+      "SELECT employee.first_name AS 'First Name', employee.last_name AS 'Last Name', employee.department AS 'Department' FROM employee LEFT JOIN role ON employee.role_id = role.role_id;"
     );
   },
   getEmployeesByManager() {
@@ -29,7 +31,9 @@ module.exports = {
     return connection.query("SELECT * FROM department");
   },
   getRoles() {
-    return connection.query("SELECT * FROM role");
+    return connection.query(
+      "SELECT employee.first_name AS 'First Name', employee.last_name, role.title, role.salary FROM employee LEFT JOIN role ON employee.role_id = role.role_id;"
+    );
   },
 };
 
