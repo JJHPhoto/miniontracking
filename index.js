@@ -3,6 +3,9 @@ const db = require("./db");
 const connection = require("./db/connection");
 const index = require("./db/index");
 const cTable = require("console.table");
+const logo = require("asciiart-logo");
+const config = require("./package.json");
+console.log(logo(config).render());
 
 function askForAction() {
   inquirer
