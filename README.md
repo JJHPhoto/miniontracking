@@ -25,9 +25,11 @@ Then we had the holiday break. I tried to get into coding a few times during the
 
 I worked on getting my first few views working. I modified the schema & seed file a bit to fit the logic in my head. However, I ended up changing my SELECT for some of my views after a TA explained how to LEFT JOIN my tables. I had heard of this concept a few times, but being abl to work with him on my code put it into my head in a way I could understand.
 
+I ended up not doing the update or delete features of the homework. I decided to go ahead and submit what I had done because I didn't want to fall behind again with my homework. I am quite pleased with what I was able to complete but also a bit disappointed that I couldn't figure out how to get the update/delete parts to work.
+
 ## Application Demo
 
-![](...)
+![](appDemo.gif)
 
 To watch a video of the application being fully demo'd please use this link: [Application Demo](https://drive.google.com/file/d/1TS1DISiWTDDt6WIFfIU3zngjXzDP-ToW/view).
 
