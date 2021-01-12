@@ -29,7 +29,7 @@ I worked on getting my first few views working. I modified the schema & seed fil
 
 ![](...)
 
-To watch a video of the application being fully demo'd please use this link: [Application Demo](...).
+To watch a video of the application being fully demo'd please use this link: [Application Demo](https://drive.google.com/file/d/1TS1DISiWTDDt6WIFfIU3zngjXzDP-ToW/view).
 
 ## Technologies Used
 

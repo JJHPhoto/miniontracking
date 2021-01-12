@@ -22,6 +22,7 @@ CREATE TABLE employee (
 id INT auto_increment,
 first_name varchar(30),
 last_name varchar(30),
+role varchar(30),
 role_id int,
 department varchar(30),
 manager_id int,
